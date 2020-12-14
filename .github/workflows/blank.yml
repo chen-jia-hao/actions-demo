@@ -33,4 +33,7 @@ jobs:
 
       - name: Install dependencies
         run: yarn --frozen-lockfile
+      # run custom task
+      - name: run index
+        run: yarn run test
 

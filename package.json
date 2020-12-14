@@ -5,6 +5,9 @@
   "repository": "https://github.com/chen-jia-hao/actions-demo.git",
   "author": "chen-jia-hao <chen-jia-hao@outlook.com>",
   "license": "MIT",
+  "scripts": {
+    "test": "node index.js"
+  },
   "dependencies": {
     "axios": "^0.21.0"
   }
