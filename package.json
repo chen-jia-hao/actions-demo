@@ -1,0 +1,11 @@
+{
+  "name": "actions-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/chen-jia-hao/actions-demo.git",
+  "author": "chen-jia-hao <chen-jia-hao@outlook.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.0"
+  }
+}
