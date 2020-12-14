@@ -4,7 +4,7 @@ on:
   push:
     branches: [ main ]
   schedule:
-    - cron: '0/1 * * * *'
+    - cron: '*/1 * * * *'
 
   workflow_dispatch:
 
@@ -16,8 +16,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       # set timezone
-      #- name: set timezone
-      #  run: sudo timedatectl set-timezone Asia/Shanghai && date
+      - name: set timezone
+        run: sudo timedatectl set-timezone Asia/Shanghai
       # install node
       - name: Use Node.js 14.x
         uses: actions/setup-node@v1
