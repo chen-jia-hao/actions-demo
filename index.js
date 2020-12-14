@@ -5,4 +5,5 @@ async function init() {
   console.log(res.data);
 }
 
-init().then(console.log)
+// init().then(console.log)
+console.log(new Date().toISOString())
