@@ -6,4 +6,4 @@ async function init() {
 }
 
 // init().then(console.log)
-console.log(new Date().toISOString())
+console.log(new Date().toLocaleDateString(), new Date().toLocaleTimeString())
