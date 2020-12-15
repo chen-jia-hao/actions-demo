@@ -1,11 +1,18 @@
-const axios = require('axios');
+const axios = require('axios')
+const qs = require('qs')
+
+const SCKEY = process.env.SCKEY
 
 async function init() {
-  let res = await axios.get('http://www.baidu.com');
-  console.log(res.data);
+  let data = {
+    text: 'hi cjh',
+    desp: 'go go go'
+  }
+  let res = await axios.post(`https://sc.ftqq.com/${SCKEY}.send`, qs.stringify(data))
+  console.log(res.data)
 }
 
-// init().then(console.log)
+init().then(console.log)
 console.log(new Date().toLocaleDateString(), new Date().toLocaleTimeString())
-console.log(process.env.VAR1, process.env.VAR2, process.env.VAR3)
+console.log(process.env.VAR1, process.env.VAR2, process.env.VAR3, SCKEY)
 console.log(process.env)
