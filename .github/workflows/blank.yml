@@ -30,7 +30,7 @@ jobs:
       - name: run index
         run: yarn run test
         env:
-          VAR1: ${{ secrets.V1 }}
-          VAR2: ${{ secrets.V2 }}
+          VAR1: ${{ secrets.VAR1 }}
+          VAR2: ${{ secrets.VAR2 }}
           VAR3: V3
 
