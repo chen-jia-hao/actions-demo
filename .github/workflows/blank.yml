@@ -32,4 +32,5 @@ jobs:
         env:
           VAR1: ${{ secrets.V1 }}
           VAR2: ${{ secrets.V2 }}
+          VAR3: V3
 
