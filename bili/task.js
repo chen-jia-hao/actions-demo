@@ -55,6 +55,7 @@ async function getTopVideoList(ps = 20, pn = 1) {
       headers,
     });
     if (apiUrl.validateCode(response.data.code)) {
+      console.log(response.data);
       topVideoList = response.data.data.list
       return response.data.data.list
     }
@@ -199,6 +200,7 @@ async function dailyJob() {
   logEnd()
   //获取视频
   let videoList = await getTopVideoList();
+  console.log(videoList);
   if (isLogin) {
     console.log('登陆操作成功')
     step++
