@@ -236,6 +236,8 @@ async function dailyJob() {
   } else {
     console.log('登陆操作失败')
   }
+
+  return dailyLog
 }
 
 // dailyJob().then(console.log)
