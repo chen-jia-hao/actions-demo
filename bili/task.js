@@ -36,7 +36,6 @@ async function serverLogPush() {
 async function loginCheck() {
   try {
     const response = await axios.get(apiUrl.loginNav, {headers});
-    console.log(response.data);
     userInfo = response.data.data
     return apiUrl.validateCode(response.data) && response.data.data.isLogin
   } catch (e) {
@@ -46,7 +45,6 @@ async function loginCheck() {
 }
 
 async function getTopVideoList(ps = 20, pn = 1) {
-  console.log('1');
   try {
     let response = await axios.get('https://api.bilibili.com/x/web-interface/popular', {
       params: {
@@ -64,8 +62,6 @@ async function getTopVideoList(ps = 20, pn = 1) {
     return []
   }
 }
-
-getTopVideoList().then(console.log).catch(console.log)
 
 async function watchVideo(bvid) {
   let params = {
@@ -232,7 +228,7 @@ async function dailyJob() {
     console.log(todayExpList);
     let todayExpTotal = todayExpList.map(v => v.delta)
       .reduce((v1, v2) => v1 + v2, 0);
-    log(step, todayExpTotal);
+    log(step, '今日经验获取总数：' + todayExpTotal);
     logEnd()
 
     await serverLogPush()
@@ -241,6 +237,7 @@ async function dailyJob() {
     console.log('登陆操作失败')
   }
 
+  console.log('-'.repeat(20))
   return dailyLog
 }
 
