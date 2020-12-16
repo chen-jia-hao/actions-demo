@@ -9,6 +9,15 @@ const biliCookieObj = cookie.parse(biliCookie)
 
 biliCookieObj.bili_jct || console.log('cookie 有误，请重新设置')
 
+let {DedeUserID, SESSDATA, bili_jct} = biliCookieObj
+let simpleCookieObj = {DedeUserID, SESSDATA, bili_jct}
+let simpleCookie = ''
+for (let objKey in simpleCookieObj) {
+  console.log(objKey, simpleCookieObj[objKey]);
+  simpleCookie += cookie.serialize(objKey, simpleCookieObj[objKey]) + ";"
+}
+simpleCookie = simpleCookie.substring(0, simpleCookie.length - 1)
+
 /**
  * bili及server酱推送的各个api接口地址
  */
