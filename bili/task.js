@@ -46,6 +46,7 @@ async function loginCheck() {
 }
 
 async function getTopVideoList(ps = 20, pn = 1) {
+  console.log('1');
   try {
     let response = await axios.get('https://api.bilibili.com/x/web-interface/popular', {
       params: {
@@ -54,8 +55,7 @@ async function getTopVideoList(ps = 20, pn = 1) {
       },
       headers,
     });
-    if (apiUrl.validateCode(response.data.code)) {
-      console.log(response.data);
+    if (apiUrl.validateCode(response.data)) {
       topVideoList = response.data.data.list
       return response.data.data.list
     }
@@ -64,6 +64,8 @@ async function getTopVideoList(ps = 20, pn = 1) {
     return []
   }
 }
+
+getTopVideoList().then(console.log).catch(console.log)
 
 async function watchVideo(bvid) {
   let params = {
@@ -200,7 +202,7 @@ async function dailyJob() {
   logEnd()
   //获取视频
   let videoList = await getTopVideoList();
-  console.log(videoList);
+
   if (isLogin) {
     console.log('登陆操作成功')
     step++
